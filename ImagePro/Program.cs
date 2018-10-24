@@ -10,6 +10,7 @@ namespace ImagePro
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
