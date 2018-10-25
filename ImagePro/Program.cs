@@ -91,6 +91,10 @@ namespace ImagePro
             _files = System.IO.Directory.GetFiles(_path);
             var dirInfo = new DirectoryInfo(_path);
             _subpath = dirInfo.Name + "-Kolyago";
+            if (dirInfo.Root.ToString() == _path)
+            {
+                _subpath = "Kolyago";
+            }
             dirInfo.CreateSubdirectory(_subpath);
         }
 
