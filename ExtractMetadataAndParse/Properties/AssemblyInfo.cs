@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ImagePro")]
+[assembly: AssemblyTitle("ExtractMetadataAndParse")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ImagePro")]
+[assembly: AssemblyProduct("ExtractMetadataAndParse")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e7eee52-8603-43a9-8625-108b51400b9b")]
+[assembly: Guid("fee10d90-0fab-417e-8b0d-cdeb5bad7c31")]
 
 // Version information for an assembly consists of the following four values:
 //
