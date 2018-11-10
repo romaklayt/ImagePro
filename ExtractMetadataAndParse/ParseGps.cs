@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ExtractMetadataAndParse
 {
@@ -37,6 +38,29 @@ namespace ExtractMetadataAndParse
             var gpsGrad = double.Parse(gps[0].ToString() + gps[1]);
             var gpsRes = (gpsGrad + gpsmin + gpssec).ToString();
             return gpsRes;
+        }
+
+        public static (string, string, bool) Parse(FileStream file)
+        {
+            var fileMetadata = ExtractMetadata.Extract(file);
+            if (fileMetadata == null) return (null, null, true);
+            try
+            {
+                _gpsW = fileMetadata[5].Tags[1].Description;
+                _gpsH = fileMetadata[5].Tags[3].Description;
+                _gpsH = GpsParseToString(_gpsH).Replace(",", ".");
+                _gpsW = GpsParseToString(_gpsW).Replace(",", ".");
+            }
+            catch
+            {
+                Console.CursorLeft = 0;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine($"File: {file} gps coordinate not found");
+                Console.ResetColor();
+                return (null, null, true);
+            }
+
+            return (_gpsW, _gpsH, false);
         }
     }
 }
